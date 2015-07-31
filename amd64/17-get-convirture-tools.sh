@@ -1,1 +1,0 @@
-../arch-common/17-get-convirture-tools.sh

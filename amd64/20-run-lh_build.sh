@@ -1,1 +1,0 @@
-../arch-common/20-run-lh_build.sh
