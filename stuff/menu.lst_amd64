@@ -3,22 +3,39 @@ color cyan/blue white/blue
 splashimage /boot/grub/splash.xpm.gz
 timeout 30
 
-# Minimal dom0_mem=4096M for dom0 64bits? Maybe if we have a real machine with 64Giga of RAM? Is it really necessary?
-title       Xen 3.2-1 64 bits / Debian 64 bits live dom0, kernel 2.6.26-2-xen-amd64
-kernel      /live/xen-3.2-1-amd64.gz dom0_mem=640M
-module      /live/vmlinuz-2.6.26-2-xen-amd64 boot=live username=livexen hostname=xenalive union=aufs ro console=tty0 max_loop=256
-module      /live/initrd.img-2.6.26-2-xen-amd64
-quiet
+# Minimal recommended "dom0_mem=4096M" for dom0 64bits (really big servers - ~64G of RAM or more)
+title	Xen 4.4.1 64-bit / Debian GNU/Linux 64-bit live dom0, kernel 3.16.0-4-amd64
+kernel	/live/xen-4.4-amd64.gz dom0_mem=1024M
+module	/live/vmlinuz-3.16.0-4-amd64 boot=live config boot=live components console=tty0 max_loop=256
+module	/live/initrd.img-3.16.0-4-amd64
 
-# Safe Mode - 64 bits
-title       Xen 3.2-1 64 bits Safe Mode / Debian 64 bits live dom0, kernel 2.6.26-2-xen-amd64
+title	Debian GNU/Linux - live, KVM Host
+kernel	/live/vmlinuz-3.16.0-4-amd64 boot=live config boot=live components
+initrd	/live/initrd.img-3.16.0-4-amd64
+
+title	Debian GNU/Linux - live (fail-safe mode)
+kernel	/live/vmlinuz-3.16.0-4-amd64 boot=live config boot=live components quiet splash
+initrd	/live/initrd.img-3.16.0-4-amd64
+
+title	Debian GNU/Linux - live, kernel 3.16.0-4-amd64
+kernel	/live/vmlinuz-3.16.0-4-amd64 boot=live config boot=live components quiet splash
+initrd	/live/initrd.img-3.16.0-4-amd64
+
+title	Debian GNU/Linux - live, kernel 3.16.0-4-amd64 (fail-safe mode)
+kernel	/live/vmlinuz-3.16.0-4-amd64 boot=live config boot=live components quiet splash
+initrd	/live/initrd.img-3.16.0-4-amd64
+
+# OLD
+
+# Safe Mode - 64-bit
+title       OLD Xen 3.2-1 64-bit Safe Mode / Debian 64-bit live dom0, kernel 2.6.26-2-xen-amd64
 kernel      /live/xen-3.2-1-amd64.gz dom0_mem=640M nosmp noreboot noirqbalance acpi=off noapic
 module      /live/vmlinuz-2.6.26-2-xen-amd64 boot=live username=livexen hostname=xenalive union=aufs ro console=tty0 max_loop=256 nousb
 module      /live/initrd.img-2.6.26-2-xen-amd64
 quiet
 
-# Serial Console Enabled - 64 bits
-title       Xen 3.2-1 64 bits Serial enabled / Debian 64 bits live dom0, kernel 2.6.26-2-xen-amd64
+# Serial Console Enabled - 64-bit
+title       OLD Xen 3.2-1 64-bit Serial enabled / Debian 64-bit live dom0, kernel 2.6.26-2-xen-amd64
 kernel      /live/xen-3.2-1-amd64.gz dom0_mem=640M com1=115200,8n1 console=com1,tty
 module      /live/vmlinuz-2.6.26-2-xen-amd64 boot=live username=livexen hostname=xenalive union=aufs ro xencons=ttyS0 max_loop=256 console=ttyS0,115200n8
 module      /live/initrd.img-2.6.26-2-xen-amd64

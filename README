@@ -1,14 +1,13 @@
 
                         How to build the Xen Live CD
 
-    These scripts were made to help us set up and run the live-helper to create
+    These scripts were made to help us set up and run the live-build to create
  a new Xen Live CD.
 
-    First thing is that you must to be root to run this steps properly, since
- live-helper do some chroots, mounts, etc...
+    You must to be root to run this steps properly, since live-build do some
+ chroots, mounts, etc...
 
-    Second is that the live-helper used is 1.0.5-1 from Ubuntu Karmic manually
- backported to Debian Lenny.
+    The live-build used is 4.0.3-1 from Debian Jessie.
 
     NOTE: If you wish to build the 64 bits version of the Xen Live CD, you must
  be on a 64 bits machine.
@@ -31,12 +30,13 @@
 
  3- Run ./10-init-lh_config.sh to prepare the base for live-helper;
 
- 4- Run ./15-copy-some-stuff.sh to copy some stuff to be included in your dom0;
+ 4- Run ./13-package-list.sh to generate the package list that will end up being
+    installed on the live system.
 
- 5- Run ./17-get-convirture-tools.sh to get Convirture tools;
+ 5- Run ./15-copy-some-stuff.sh to copy some stuff to be included in your dom0;
 
  6- Run ./20-run-lh_build.sh as first step in the iso creation;
- 
+
  7- Run ./30-prepare-binary-for-xen.sh to copy Xen to the CD root directory;
 
  8- Run ./31-remove-kernel-of-chroot.sh to remove initrd and vmlinuz from the

@@ -6,5 +6,5 @@
 # can be a good idea to improve this! Then live-helper will be able
 # to generate grub's menu.lst for the live CD from binary/ contents... ;-)
 
-# Copy 32 bits Hypervisor
-cp chroot/boot/xen-3.2-1-amd64.gz binary/live
+# Copy Xen Hypervisor to ISO boot directory
+cp chroot/boot/xen-4.4-amd64.gz binary/live

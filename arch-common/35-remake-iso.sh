@@ -1,5 +1,5 @@
 #! /bin/sh
 
 rm binary/md5sum.txt
-lh_binary_md5sum --force
-lh_binary_iso --force
+lb binary_md5sum --force
+lb binary_iso --force

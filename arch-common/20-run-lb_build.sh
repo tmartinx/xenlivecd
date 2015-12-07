@@ -1,4 +1,4 @@
 #! /bin/sh
 
-export MKSQUASHFS_OPTIONS="-e boot initrd.img vmlinuz"
-lh_build
+# export MKSQUASHFS_OPTIONS="-e boot initrd.img vmlinuz"
+lb build
