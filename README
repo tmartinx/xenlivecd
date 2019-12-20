@@ -30,8 +30,8 @@
 
  3- Run ./10-init-lh_config.sh to prepare the base for live-helper;
 
- 4- Run ./13-package-list.sh to generate the package list that will end up being
-    installed on the live system.
+ 4- Run ./13-package-list.sh to generate the package list that will end up
+    being installed on the live system.
 
  5- Run ./15-copy-some-stuff.sh to copy some stuff to be included in your dom0;
 
@@ -80,8 +80,8 @@
     If you have a 64-bit CPU but little memory, try using the i386 version of
  the Xen Live CD with the Xen 64 bits. With this you'll have a 32-bits dom0 on
  top of a 64-bits hypervisor. In this case, you no longer need the libc6-xen
- package in any of your domains (dom0 and domU). Ending with the problem related
- to TLS. The libc6-xen is only required in pure 32-bit systems.
+ package in any of your domains (dom0 and domU). Ending with the problem
+ related to TLS. The libc6-xen is only required in pure 32-bit systems.
 
     You only need a 64 bits dom0 if you give to it, 4G of RAM or more (aka
  dom0_mem=4096M). It's not a good idea to have a 64 bits O.S. with low memory
